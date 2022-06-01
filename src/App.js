@@ -6,7 +6,8 @@ export default function App() {
     firstName: "",
     lastName: "",
     email: "",
-  })
+  });
+  const [submitted, setSubmitted] = useState(false);
 
   const handleFirstNameInputChange = (event) => {
     setValues({...values, firstName:event.target.value})
@@ -20,6 +21,7 @@ export default function App() {
   return (
     <div class="form-container">
       <form class="register-form">
+        <div className="success-message">Success! Thank you for registering</div>
         {/* Uncomment the next line to show the success message */}
         {/* <div class="success-message">Success! Thank you for registering</div> */}
         <input
