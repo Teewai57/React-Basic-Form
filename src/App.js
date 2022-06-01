@@ -7,12 +7,23 @@ export default function App() {
     lastName: "",
     email: "",
   })
+
+  const handleFirstNameInputChange = (event) => {
+    setValues({...values, firstName:event.target.value})
+  }
+  const handleLastNameInputChange = (event) => {
+    setValues({...values, lastName:event.target.value})
+  }
+  const handleEmailInputChange = (event) => {
+    setValues({...values, email:event.target.value})
+  }
   return (
     <div class="form-container">
       <form class="register-form">
         {/* Uncomment the next line to show the success message */}
         {/* <div class="success-message">Success! Thank you for registering</div> */}
         <input
+        onChange={handleFirstNameInputChange}
           id="first-name"
           class="form-field"
           type="text"
@@ -23,6 +34,7 @@ export default function App() {
         {/* Uncomment the next line to show the error message */}
         {/* <span id="first-name-error">Please enter a first name</span> */}
         <input
+        onChange={handleLastNameInputChange}
           id="last-name"
           class="form-field"
           type="text"
@@ -33,6 +45,7 @@ export default function App() {
         {/* Uncomment the next line to show the error message */}
         {/* <span id="last-name-error">Please enter a last name</span> */}
         <input
+        onChange={handleEmailInputChange}
           id="email"
           class="form-field"
           type="text"
