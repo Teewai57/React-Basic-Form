@@ -20,11 +20,12 @@ export default function App() {
   }
   const handleSubmit = (event) => {
     event.preventDefault();
+    setSubmitted(true)
   }
 
   return (
     <div class="form-container">
-      <form class="register-form">
+      <form class="register-form" onSubmit={handleSubmit}>
         {submitted ? <div className="success-message">Success! Thank you for registering</div> :null}
         {/* Uncomment the next line to show the success message */}
         {/* <div class="success-message">Success! Thank you for registering</div> */}
@@ -37,6 +38,7 @@ export default function App() {
           name="firstName"
           value={values.firstName}
         />
+        <span>Please enter a First name</span>
         {/* Uncomment the next line to show the error message */}
         {/* <span id="first-name-error">Please enter a first name</span> */}
         <input
@@ -48,6 +50,7 @@ export default function App() {
           name="lastName"
           value = {values.lastName}
         />
+        <span>Please enter a last name</span>
         {/* Uncomment the next line to show the error message */}
         {/* <span id="last-name-error">Please enter a last name</span> */}
         <input
@@ -59,6 +62,7 @@ export default function App() {
           name="email"
           value = {values.email}
         />
+        <span>Please enter an email address</span>
         {/* Uncomment the next line to show the error message */}
         {/* <span id="email-error">Please enter an email address</span> */}
         <button class="form-field" type="submit">
