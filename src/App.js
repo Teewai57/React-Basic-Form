@@ -18,10 +18,14 @@ export default function App() {
   const handleEmailInputChange = (event) => {
     setValues({...values, email:event.target.value})
   }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  }
+
   return (
     <div class="form-container">
       <form class="register-form">
-        <div className="success-message">Success! Thank you for registering</div>
+        {submitted ? <div className="success-message">Success! Thank you for registering</div> :null}
         {/* Uncomment the next line to show the success message */}
         {/* <div class="success-message">Success! Thank you for registering</div> */}
         <input
