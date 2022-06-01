@@ -8,6 +8,7 @@ export default function App() {
     email: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [valid, setValid] = useState(false)
 
   const handleFirstNameInputChange = (event) => {
     setValues({...values, firstName:event.target.value})
@@ -38,7 +39,7 @@ export default function App() {
           name="firstName"
           value={values.firstName}
         />
-        <span>Please enter a First name</span>
+        {submitted && !values.firstName ? <span>Please enter a First name</span> :null}
         {/* Uncomment the next line to show the error message */}
         {/* <span id="first-name-error">Please enter a first name</span> */}
         <input
@@ -50,7 +51,7 @@ export default function App() {
           name="lastName"
           value = {values.lastName}
         />
-        <span>Please enter a last name</span>
+        {submitted && !values.lastName ? <span>Please enter a last name</span> :null}
         {/* Uncomment the next line to show the error message */}
         {/* <span id="last-name-error">Please enter a last name</span> */}
         <input
@@ -62,7 +63,7 @@ export default function App() {
           name="email"
           value = {values.email}
         />
-        <span>Please enter an email address</span>
+        {submitted && !values.email ? <span>Please enter an email address</span> :null}
         {/* Uncomment the next line to show the error message */}
         {/* <span id="email-error">Please enter an email address</span> */}
         <button class="form-field" type="submit">
