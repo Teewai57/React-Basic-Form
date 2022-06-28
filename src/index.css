@@ -55,7 +55,7 @@ input {
 }
 
 button {
-  background: gray;
+  background: #800000;
   color: white;
   cursor: pointer;
 }

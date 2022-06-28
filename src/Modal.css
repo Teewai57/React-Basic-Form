@@ -3,4 +3,7 @@ div{
     justify-content: center;
     align-items: center;
     border-radius: 5px;
+    font-size: 1.5rem;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #800000;
 }

@@ -33,7 +33,7 @@ export default function BasicModal(props) {
             Text in a modal
           </Typography> */}
           <div id="modal-modal-description" sx={{ mt: 2 }}>
-            Welcome {props.name}
+            Welcome {props.name}!
           </div>
         </Box>
       </Modal>

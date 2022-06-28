@@ -2,27 +2,70 @@ import React, { useState } from "react";
 import BasicModal from "./Modal"
 import "./index.css";
 
+
+
 export default function App() {
+  const validEmailRegex = RegExp(
+    /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+  );
+  const validateForm = errors => {
+    let valid = true;
+    Object.values(errors).forEach(val => val.length > 0 && (valid = false));
+    return valid;
+  };
+
+  handleChange = (event) => {
+    event.preventDefault();
+    const { name, value } = event.target;
+    let errors = this.state.errors;
+
+    switch (name) {
+      case 'fullName': 
+        errors.fullName = 
+          value.length < 5
+            ? 'Full Name must be at least 5 characters long!'
+            : '';
+        break;
+      case 'email': 
+        errors.email = 
+          validEmailRegex.test(value)
+            ? ''
+            : 'Email is not valid!';
+        break;
+      case 'password': 
+        errors.password = 
+          value.length < 8
+            ? 'Password must be at least 8 characters long!'
+            : '';
+        break;
+      default:
+        break;
+    }
+
+    this.setState({errors, [name]: value});
+  }
+  
+
   const [values, setValues] = useState({
-    firstName: "",
-    lastName: "",
+    fullName: "",
     email: "",
+    PassWord: "",
   });
   const [submitted, setSubmitted] = useState(false);
   const [valid, setValid] = useState(false)
 
-  const handleFirstNameInputChange = (event) => {
-    setValues({...values, firstName:event.target.value})
+  const handleFullNameInputChange = (event) => {
+    setValues({...values, fullName:event.target.value})
   }
-  const handleLastNameInputChange = (event) => {
-    setValues({...values, lastName:event.target.value})
+  const handlePassWordInputChange = (event) => {
+    setValues({...values, PassWord:event.target.value})
   }
   const handleEmailInputChange = (event) => {
     setValues({...values, email:event.target.value})
   }
   const handleSubmit = (event) => {
     event.preventDefault();
-    if(values.firstName && values.lastName && values.email) {
+    if(values.fullName && values.PassWord && values.email) {
       setValid(true);
     }
     setSubmitted(true)
@@ -31,29 +74,29 @@ export default function App() {
   return (
     <div class="form-container">
       <form class="register-form " onSubmit={handleSubmit}>
-        {submitted && valid ? <BasicModal name = {values.firstName} /> :null}
+        {submitted && valid ? <BasicModal name = {values.fullName} /> :null}
         <input
-        onChange={handleFirstNameInputChange}
-          id="first-name"
+        onChange={handleFullNameInputChange}
+          id="full-name"
           class="form-field"
           type="text"
-          placeholder="First Name"
-          name="firstName"
+          placeholder="Full Name"
+          name="fullName"
           value={values.firstName}
         />
-        {submitted && !values.firstName ? <span>Please enter a First name</span> :null}
+        {submitted && !values.fullName ? <span>Please enter a Fullname</span> :null}
         {/* Uncomment the next line to show the error message */}
         {/* <span id="first-name-error">Please enter a first name</span> */}
         <input
-        onChange={handleLastNameInputChange}
-          id="last-name"
+        onChange={handlePassWordInputChange}
+          id="password"
           class="form-field"
-          type="text"
-          placeholder="Last Name"
-          name="lastName"
-          value = {values.lastName}
+          type="password"
+          placeholder="Password"
+          name="password"
+          value = {values.PassWord}
         />
-        {submitted && !values.lastName ? <span>Please enter a last name</span> :null}
+        {submitted && !values.PassWord ? <span>Please enter a last name</span> :null}
         {/* Uncomment the next line to show the error message */}
         {/* <span id="last-name-error">Please enter a last name</span> */}
         <input
