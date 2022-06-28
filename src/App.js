@@ -63,7 +63,7 @@ export default function App() {
         onChange={handleEmailInputChange}
           id="email"
           class="form-field"
-          type="text"
+          type="email"
           placeholder="Email"
           name="email"
           value = {values.email}
