@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import BasicModal from "./Modal"
 import "./index.css";
 
 export default function App() {
@@ -30,7 +31,8 @@ export default function App() {
   return (
     <div class="form-container">
       <form class="register-form " onSubmit={handleSubmit}>
-        {submitted && valid ? <div className="success-message">Success! Thank you {values.firstName} for registering</div> :null}
+        {/* {submitted && valid ? <div className="success-message">Success! Thank you {values.firstName} for registering</div> :null} */}
+        {submitted && valid ? <BasicModal /> :null}
         {/* Uncomment the next line to show the success message */}
         {/* <div class="success-message">Success! Thank you for registering</div> */}
         <input
@@ -72,6 +74,8 @@ export default function App() {
         <button class="form-field" type="submit">
           Register
         </button>
+        
+        
       </form>
     </div>
   );
