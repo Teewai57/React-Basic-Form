@@ -31,10 +31,7 @@ export default function App() {
   return (
     <div class="form-container">
       <form class="register-form " onSubmit={handleSubmit}>
-        {/* {submitted && valid ? <div className="success-message">Success! Thank you {values.firstName} for registering</div> :null} */}
-        {submitted && valid ? <BasicModal /> :null}
-        {/* Uncomment the next line to show the success message */}
-        {/* <div class="success-message">Success! Thank you for registering</div> */}
+        {submitted && valid ? <BasicModal name = {values.firstName} /> :null}
         <input
         onChange={handleFirstNameInputChange}
           id="first-name"
