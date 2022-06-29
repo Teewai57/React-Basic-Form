@@ -5,47 +5,7 @@ import "./index.css";
 
 
 export default function App() {
-  // const validEmailRegex = RegExp(
-  //   /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
-  // );
-  // const validateForm = errors => {
-  //   let valid = true;
-  //   Object.values(errors).forEach(val => val.length > 0 && (valid = false));
-  //   return valid;
-  // };
-
-  // handleChange = (event) => {
-  //   event.preventDefault();
-  //   const { name, value } = event.target;
-  //   let errors = this.state.errors;
-
-  //   switch (name) {
-  //     case 'fullName': 
-  //       errors.fullName = 
-  //         value.length < 5
-  //           ? 'Full Name must be at least 5 characters long!'
-  //           : '';
-  //       break;
-  //     case 'email': 
-  //       errors.email = 
-  //         validEmailRegex.test(value)
-  //           ? ''
-  //           : 'Email is not valid!';
-  //       break;
-  //     case 'password': 
-  //       errors.password = 
-  //         value.length < 8
-  //           ? 'Password must be at least 8 characters long!'
-  //           : '';
-  //       break;
-  //     default:
-  //       break;
-  //   }
-
-  //   this.setState({errors, [name]: value});
-  // }
   
-
   const [values, setValues] = useState({
     fullName: "",
     email: "",
