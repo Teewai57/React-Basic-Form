@@ -63,27 +63,17 @@ export default function App() {
   const handleEmailInputChange = (event) => {
     setValues({...values, email:event.target.value})
   }
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   if(values.fullName && values.PassWord && values.email) {
-  //     setValid(true);
-  //   }
-  //   setSubmitted(true)
-  // }
-  
-  handleSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    if(validateForm(this.state.errors)) {
-      console.info('Valid Form')
-    }else{
-      console.error('Invalid Form')
+    if(values.fullName && values.PassWord && values.email) {
+      setValid(true);
     }
+    setSubmitted(true)
   }
-
 
   return (
     <div class="form-container">
-      <form class="register-form " onSubmit={this.handleSubmit}>
+      <form class="register-form " onSubmit={handleSubmit}>
         {submitted && valid ? <BasicModal name = {values.fullName} /> :null}
         <input
         onChange={handleFullNameInputChange}
