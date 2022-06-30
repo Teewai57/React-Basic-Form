@@ -1,4 +1,10 @@
 import React, { useState } from "react";
+import IconButton from "@material-ui/core/IconButton";
+import InputLabel from "@material-ui/core/InputLabel";
+import Visibility from "@material-ui/icons/Visibility";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import VisibilityOff from "@material-ui/icons/VisibilityOff";
+import Input from "@material-ui/core/Input";
 import BasicModal from "./Modal"
 import "./index.css";
 
@@ -10,6 +16,7 @@ export default function App() {
     fullName: "",
     email: "",
     PassWord: "",
+    showPassword: false,
   });
   const [submitted, setSubmitted] = useState(false);
   const [valid, setValid] = useState(false)
