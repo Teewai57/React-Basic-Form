@@ -45,7 +45,13 @@ export default function App() {
   }
 
   return (
-    <div class="form-container">
+    <>
+
+    <div className="header">
+      Login
+    </div>
+
+        <div class="form-container shadow">
       <form class="register-form " onSubmit={handleSubmit}>
         {submitted && valid ? <BasicModal name = {values.fullName} /> :null}
         <Input
@@ -99,11 +105,13 @@ export default function App() {
         />
         {submitted && !values.PassWord ? <span>Invalid Password!</span> :null}
 
-        <button class="form-field" type="submit">
-          Register
+        <button class="form-field mt-3" type="submit">
+          Login
         </button>
         
       </form>
     </div>
+    </>
+
   );
 }
