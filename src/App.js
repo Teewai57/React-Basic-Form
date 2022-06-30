@@ -21,6 +21,10 @@ export default function App() {
   const [submitted, setSubmitted] = useState(false);
   const [valid, setValid] = useState(false)
 
+  const handleClickShowPassword = () => {
+    setValues({ ...values, showPassword: !values.showPassword });
+  };
+
   const handleFullNameInputChange = (event) => {
     setValues({...values, fullName:event.target.value})
   }
@@ -58,7 +62,7 @@ export default function App() {
         onChange={handlePassWordInputChange}
           id="password"
           class="form-field"
-          type="password"
+          type={values.showPassword ? "text" : "password"}
           placeholder="Password"
           name="password"
           value = {values.PassWord}
