@@ -93,8 +93,6 @@ export default function App() {
           value = {values.email}
         />
         {submitted && !values.email ? <span>Please enter an email address</span> :null}
-        {/* Uncomment the next line to show the error message */}
-        {/* <span id="email-error">Please enter an email address</span> */}
         <button class="form-field" type="submit">
           Register
         </button>
