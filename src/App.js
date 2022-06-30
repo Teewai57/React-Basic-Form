@@ -64,6 +64,7 @@ export default function App() {
           value={values.firstName}
           className="input"
         />
+        
         {submitted && !values.fullName ? <span>Please enter a Fullname</span> :null}
 
         <Input
