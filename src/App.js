@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import IconButton from '@mui/material/IconButton';
-import InputAdornment from "@material-ui/core/InputAdornment";
-import VisibilityOff from "@material-ui/icons/VisibilityOff";
-import Input from "@material-ui/core/Input";
+import InputAdornment from '@mui/material/InputAdornment';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import Input from '@mui/material/Input';
 import BasicModal from "./Modal"
 import "./index.css";
 
@@ -18,6 +19,10 @@ export default function App() {
   const [submitted, setSubmitted] = useState(false);
   const [valid, setValid] = useState(false)
 
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
+  
   const handleClickShowPassword = () => {
     setValues({ ...values, showPassword: !values.showPassword });
   };
@@ -71,7 +76,7 @@ export default function App() {
                 onClick={handleClickShowPassword}
                 onMouseDown={handleMouseDownPassword}
               >
-                {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                {values.showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
               </IconButton>
             </InputAdornment>
           }
