@@ -58,8 +58,18 @@ export default function App() {
           value={values.firstName}
         />
         {submitted && !values.fullName ? <span>Please enter a Fullname</span> :null}
-        {/* Uncomment the next line to show the error message */}
-        {/* <span id="first-name-error">Please enter a first name</span> */}
+
+        <input
+        onChange={handleEmailInputChange}
+          id="email"
+          class="form-field"
+          type="email"
+          placeholder="Email"
+          name="email"
+          value = {values.email}
+        />
+        {submitted && !values.email ? <span>Please enter an email address</span> :null}
+
         <Input
         onChange={handlePassWordInputChange}
           id="password"
@@ -83,16 +93,7 @@ export default function App() {
 
         />
         {submitted && !values.PassWord ? <span>Please enter a last name</span> :null}
-        <input
-        onChange={handleEmailInputChange}
-          id="email"
-          class="form-field"
-          type="email"
-          placeholder="Email"
-          name="email"
-          value = {values.email}
-        />
-        {submitted && !values.email ? <span>Please enter an email address</span> :null}
+
         <button class="form-field" type="submit">
           Register
         </button>
