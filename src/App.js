@@ -3,7 +3,7 @@ import IconButton from '@mui/material/IconButton';
 import InputAdornment from '@mui/material/InputAdornment';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import Input from '@mui/material/Input';
+// import Input from '@mui/material/Input';
 import BasicModal from "./Modal"
 import "./index.css";
 
@@ -70,7 +70,7 @@ export default function App() {
         />
         {submitted && !values.email ? <span>Please enter an email address</span> :null}
 
-        <Input
+        <input
         onChange={handlePassWordInputChange}
           id="password"
           class="form-field"
@@ -92,7 +92,7 @@ export default function App() {
           }
 
         />
-        {submitted && !values.PassWord ? <span>Please enter a last name</span> :null}
+        {submitted && !values.PassWord ? <span>Invalid Password!</span> :null}
 
         <button class="form-field" type="submit">
           Register
