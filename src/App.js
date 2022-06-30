@@ -83,8 +83,6 @@ export default function App() {
 
         />
         {submitted && !values.PassWord ? <span>Please enter a last name</span> :null}
-        {/* Uncomment the next line to show the error message */}
-        {/* <span id="last-name-error">Please enter a last name</span> */}
         <input
         onChange={handleEmailInputChange}
           id="email"
