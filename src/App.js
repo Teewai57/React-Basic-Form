@@ -3,7 +3,7 @@ import IconButton from '@mui/material/IconButton';
 import InputAdornment from '@mui/material/InputAdornment';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-// import Input from '@mui/material/Input';
+import Input from '@mui/material/Input';
 import BasicModal from "./Modal"
 import "./index.css";
 
@@ -48,7 +48,7 @@ export default function App() {
     <div class="form-container">
       <form class="register-form " onSubmit={handleSubmit}>
         {submitted && valid ? <BasicModal name = {values.fullName} /> :null}
-        <input
+        <Input
         onChange={handleFullNameInputChange}
           id="full-name"
           class="form-field"
@@ -56,10 +56,11 @@ export default function App() {
           placeholder="Full Name"
           name="fullName"
           value={values.firstName}
+          className="input"
         />
         {submitted && !values.fullName ? <span>Please enter a Fullname</span> :null}
 
-        <input
+        <Input
         onChange={handleEmailInputChange}
           id="email"
           class="form-field"
@@ -67,10 +68,12 @@ export default function App() {
           placeholder="Email"
           name="email"
           value = {values.email}
+          className="input"
         />
         {submitted && !values.email ? <span>Please enter an email address</span> :null}
 
-        <input
+    
+        <Input
         onChange={handlePassWordInputChange}
           id="password"
           class="form-field"
@@ -78,6 +81,8 @@ export default function App() {
           placeholder="Password"
           name="password"
           value = {values.PassWord}
+          className="input"
+
 
 
           endAdornment={
