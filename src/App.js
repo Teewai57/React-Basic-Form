@@ -66,6 +66,19 @@ export default function App() {
           placeholder="Password"
           name="password"
           value = {values.PassWord}
+
+
+          endAdornment={
+            <InputAdornment position="end">
+              <IconButton
+                onClick={handleClickShowPassword}
+                onMouseDown={handleMouseDownPassword}
+              >
+                {values.showPassword ? <Visibility /> : <VisibilityOff />}
+              </IconButton>
+            </InputAdornment>
+          }
+
         />
         {submitted && !values.PassWord ? <span>Please enter a last name</span> :null}
         {/* Uncomment the next line to show the error message */}
