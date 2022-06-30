@@ -1,13 +1,10 @@
 import React, { useState } from "react";
-import IconButton from "@material-ui/core/IconButton";
-import InputLabel from "@material-ui/core/InputLabel";
-import Visibility from "@material-ui/icons/Visibility";
+import IconButton from '@mui/material/IconButton';
 import InputAdornment from "@material-ui/core/InputAdornment";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import Input from "@material-ui/core/Input";
 import BasicModal from "./Modal"
 import "./index.css";
-
 
 
 export default function App() {
@@ -58,7 +55,7 @@ export default function App() {
         {submitted && !values.fullName ? <span>Please enter a Fullname</span> :null}
         {/* Uncomment the next line to show the error message */}
         {/* <span id="first-name-error">Please enter a first name</span> */}
-        <input
+        <Input
         onChange={handlePassWordInputChange}
           id="password"
           class="form-field"
@@ -98,7 +95,6 @@ export default function App() {
         <button class="form-field" type="submit">
           Register
         </button>
-        
         
       </form>
     </div>
