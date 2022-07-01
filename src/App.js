@@ -7,7 +7,6 @@ import Input from '@mui/material/Input';
 import BasicModal from "./Modal"
 import "./index.css";
 
-
 export default function App() {
   
   const [values, setValues] = useState({
@@ -63,6 +62,7 @@ export default function App() {
           name="fullName"
           value={values.firstName}
           className="input"
+          maxlength="10"
         />
         
         {submitted && !values.fullName ? <span>Please enter a Fullname</span> :null}
